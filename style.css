@@ -1,5 +1,22 @@
-.contain {
+.board {
     display: grid;
-    width: 500px;
-    height: 500px;
+    grid-template-columns: repeat(16, 25px [col-start]);
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .board>div {
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+  }
+  
+  .board>div:nth-child(16n + 1) {
+    width: 100%;
+    border: 0;
+    height: 0;
+  }
+  
+  
