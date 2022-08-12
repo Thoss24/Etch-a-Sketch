@@ -18,7 +18,7 @@
 .board {
     display: grid;
     grid-template-columns: repeat(16, 25px [col-start]);
-    
+   
 }
 /* universal selector setting all elements to border-box */
 * {
@@ -26,7 +26,7 @@
   }
   /* individual div elements (boxes) inside the board */
   .board>div {
-    border: 1px solid black;
+    outline: 1px solid black;
     height: 25px;
     width: 25px;
   }

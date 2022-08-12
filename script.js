@@ -9,12 +9,18 @@ for (let i = 0; i < squares; i++){
     
     cell.addEventListener('mouseenter', () => cell.style.backgroundColor = "black");
 
-    cell.style.backgroundColor = "blue";
+    cell.style.backgroundColor = "white";
     cell.setAttribute('id', "cell-style");
     container.appendChild(cell);
 }
-
 }
 createGrid(gridSquares);
+ 
+
+function resetBoard() {
+    const container = document.querySelector('.board');
+    let cell = container.querySelectorAll('div')
+    cell.forEach((div) => div.style.backgroundColor = "white");
+}
 
 
