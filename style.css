@@ -1,6 +1,24 @@
+.change-size {
+  display: flex;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.container {
+  display: grid;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 20px;
+  gap: 5px;
+  
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(16, 25px [col-start]);
+    
 }
 
 * {
@@ -13,10 +31,6 @@
     width: 25px;
   }
   
-  .board>div:nth-child(16n + 1) {
-    width: 100%;
-    border: 0;
-    height: 0;
-  }
+ 
   
   
