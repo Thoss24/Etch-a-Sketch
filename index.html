@@ -10,13 +10,14 @@
             <div class="title"><h1>Etch-a-Sketch</h1></div>
             <div class="board"></div>
             <div class="buttons">
-                <button onclick="changeColor('Black')">Black</button>  
-                <button onclick="changeColor('White')">Eraser</button>
-                <button onclick="changeColor('Grey')">Grey</button>
-                <button onclick="resetBoard()">Reset board</button>
+                <button onclick="changeColor('black')">Black</button>  
+                <button onclick="changeColor('white')">Eraser</button>
+                <button onclick="changeColor('grey')">Grey</button>
+                <button onclick="changeColor('random')">Random</button>
+                <button onclick="resetBoard()" >Reset board</button>
             </div>
             <div class="change-size">
-                <input type="text" placeholder="Size of board" value="16">
+                <input type="text" placeholder="Size of board" value="16" id="size-input">
                 <button>Change Size of board</button>
             </div>
         </div>

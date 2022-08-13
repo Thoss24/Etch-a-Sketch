@@ -37,3 +37,17 @@ function changeColor(select) {
                                           the value of the global (color) variable is being changed. changeColor('grey) changes (color) to grey instead of its default value of black.*/
 }
 
+function colorSquare() {
+    if (color === "random"){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
+
+
+
+
+
+
+

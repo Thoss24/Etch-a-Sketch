@@ -7,13 +7,21 @@
 /* div containing all body elements */
 .container {
   display: grid;
-  
+  justify-content: center;
 }
 /* div containing all buttons */
 .buttons {
   display: flex;
   margin-top: 20px;
   gap: 5px;
+}
+/* reset board button */
+#size-input {
+  width: 100px;
+}
+/* random color button */
+#random-color {
+  
 }
 /* Etch-a-Sketch grid */
 .board {
