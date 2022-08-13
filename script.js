@@ -10,7 +10,7 @@ const container = document.querySelector('.board');
 for (let i = 0; i < squares; i++){
     const cell = document.createElement('div');
     
-    cell.addEventListener('mouseenter', colorSquare);
+    cell.addEventListener('mouseenter', colorSquareTwo);
 
     cell.style.backgroundColor = "white";
     cell.setAttribute('id', "cell-style");
@@ -38,7 +38,7 @@ function changeColor(select) {
 }
 
 // function to generate random color. If the value passed into the changeColor function inside the onclick event is equal to "random", the code below will execute.
-function colorSquare() {
+function colorSquareTwo() {
     if (color === "random"){
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;   // the hsl() function defines colors using hue-saturation-lightness. Math.random is used to generate a random number on the hue color wheel between 0 and 360.
     } else {
