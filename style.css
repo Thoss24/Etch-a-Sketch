@@ -19,10 +19,6 @@
 #size-input {
   width: 100px;
 }
-/* random color button */
-#random-color {
-  
-}
 /* Etch-a-Sketch grid */
 .board {
     display: grid;

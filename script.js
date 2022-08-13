@@ -33,13 +33,14 @@ function resetBoard() {
 
 // function to change color of the squares. the (select) parameter refers to the color which has been passed into the changeColor function inside the onclick event within the HTML file.
 function changeColor(select) {
-    color = select;                    /* When the changeColor function is invoked with a different color passed in as an argument, 
-                                          the value of the global (color) variable is being changed. changeColor('grey) changes (color) to grey instead of its default value of black.*/
+    color = select;         /* When the changeColor function is invoked with a different color passed in as an argument, 
+                            the value of the global (color) variable is being changed because we are assigning the value of "select" to "color". changeColor('grey) changes (color) to grey instead of its default value of black.*/
 }
 
+// function to generate random color. If the value passed into the changeColor function inside the onclick event is equal to "random", the code below will execute.
 function colorSquare() {
     if (color === "random"){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;   // the hsl() function defines colors using hue-saturation-lightness. Math.random is used to generate a random number on the hue color wheel between 0 and 360.
     } else {
         this.style.backgroundColor = color;
     }
