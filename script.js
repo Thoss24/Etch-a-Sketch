@@ -1,13 +1,21 @@
-// global variable for square color value
+// global variable for square color value and click value
 let color = "black";
+let click = true;
 
 // Function to create 16x16 grid
-let gridSquares = 256;
 
-function createGrid(squares) {
+function createGrid(size) {
+
 const container = document.querySelector('.board');
+let squares = container.querySelectorAll('div');  
+squares.forEach((div) => div.remove());
+container.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+container.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-for (let i = 0; i < squares; i++){
+let amount = size * size;
+
+
+for (let i = 0; i < amount; i++){   // amount is equal to the value passed in by the user into the input element on the page.
     const cell = document.createElement('div');
     
     cell.addEventListener('mouseenter', colorSquareTwo);
@@ -17,7 +25,17 @@ for (let i = 0; i < squares; i++){
     container.appendChild(cell);
 }
 }
-createGrid(gridSquares);
+createGrid(16);
+
+// function to change grid pixels
+function changeGrid(input) {
+    if (input >= 2 && input <= 100){
+        createGrid(input)    // changeGrid(input) is equal to the value that was passed in by the user into the input element on the page. Therefore (size) inside createGrid is referring to the users input.
+    } else {
+        alert("Too many, or not enough squares");
+    }
+}
+
 
 // function to color the squares. (this) refers to the element that received the event. here, (this) is referring to the div that is being hovered over by the user.
 function colorSquare() {
@@ -39,13 +57,18 @@ function changeColor(select) {
 
 // function to generate random color. If the value passed into the changeColor function inside the onclick event is equal to "random", the code below will execute.
 function colorSquareTwo() {
+    if (click) {
     if (color === "random"){
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;   // the hsl() function defines colors using hue-saturation-lightness. Math.random is used to generate a random number on the hue color wheel between 0 and 360.
     } else {
         this.style.backgroundColor = color;
     }
+    }
 }
 
+document.querySelector('body').addEventListener('click', () => {  // if click is true then it is equal to false and vice versa. Alternating between true or false and color or no color.
+    click = !click;
+})
 
 
 
