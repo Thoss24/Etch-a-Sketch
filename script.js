@@ -7,12 +7,12 @@ let click = true;
 function createGrid(size) {
 
 const container = document.querySelector('.board');
-let squares = container.querySelectorAll('div');  
-squares.forEach((div) => div.remove());
+let squares = container.querySelectorAll('div');   // These 2 lines of code ensure that every time the board is changed in size, the old squares are being removed. going rom 16 to 17 would just append a 17x17 grid onto the old 16x16 grid.
+squares.forEach((div) => div.remove());      // Without the forEach statement to remove the div's each time the user changes the boards size, the new size and number of squares would be appended to the old size and number of squares.
 container.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
 container.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-let amount = size * size;
+let amount = size * size;  // amount to represent the value inputted by user then * by each other. i.e., 16 x 16 or 24 x24 etc..
 
 
 for (let i = 0; i < amount; i++){   // amount is equal to the value passed in by the user into the input element on the page.

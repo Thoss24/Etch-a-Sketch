@@ -11,34 +11,61 @@
   align-items: center;
   min-height: 300px;
   min-height: 300px;
-  width: 60vw;
-  height: 60vw;
+
 }
 /* div containing all buttons */
 .buttons {
   display: flex;
   margin-top: 20px;
-  gap: 5px;
+  gap: 15px;
 }
 /* reset board button */
 #size-input {
-  width: 100px;
+  width: 200px;
+  padding: 5px;
+  gap: 4px;
+  font-family: cursive;
+  font-size: 20px;
 }
 /* Etch-a-Sketch grid */
 .board {
+    align-content: center;
     display: grid;
-   
+    height: 30vw;
+    width: 30vw;
+    border-width: 5px;
+    border-style: groove;
+    border-color: black;
 }
 /* universal selector setting all elements to border-box */
 * {
     box-sizing: border-box;
   }
+  /* body */
+  body {
+    background-color: antiquewhite;
+  }
   /* individual div elements (boxes) inside the board */
   .board>div {
-    outline: 1px solid black;
-    width: 25px;
-    height: 25px;
+    width: auto;
+    height: auto;
+    box-shadow: 1px 1px 5px black;
   }
+/* color buttons*/
+.color-buttons {
+  padding: 5px;
+  gap: 4px;
+  font-family: cursive;
+  font-size: 20px;
+  background-color: white;
+  outline: 1px outset black;
+}
+/* title */
+.title {
+  font-family:cursive;
+  font-size: 40px;
+  text-decoration: underline;
+}
   
  
   

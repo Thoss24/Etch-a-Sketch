@@ -7,18 +7,18 @@
     </head>
     <body>
         <div class="container">
-            <div class="title"><h1>Etch-a-Sketch</h1></div>
+            <div><h1 class="title">Etch-a-Sketch</h1></div>
             <div class="board"></div>
             <div class="buttons">
-                <button onclick="changeColor('black')">Black</button>  
-                <button onclick="changeColor('white')">Eraser</button>
-                <button onclick="changeColor('grey')">Grey</button>
-                <button onclick="changeColor('random')">Random</button>
-                <button onclick="resetBoard()" >Reset board</button>
+                <button class="color-buttons" onclick="changeColor('black')">Black</button>  
+                <button class="color-buttons" onclick="changeColor('white')">Eraser</button>
+                <button class="color-buttons" onclick="changeColor('grey')">Grey</button>
+                <button class="color-buttons" onclick="changeColor('random')">Random</button>
+                <button class="color-buttons" onclick="resetBoard()" >Reset board</button>
             </div>
             <div class="change-size">
-                <input type="text" placeholder="Pixel size" value="16" id="size-input" onchange="changeGrid(this.value)">
-                <button>Change size</button>
+                <input type="text" placeholder="Choose pixel size"  id="size-input" onchange="changeGrid(this.value)">
+                <button class="color-buttons">Change pixel size</button>
             </div>
         </div>
     </body>
