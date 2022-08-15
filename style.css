@@ -24,8 +24,8 @@
   width: 200px;
   padding: 5px;
   gap: 4px;
-  font-family: cursive;
-  font-size: 20px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 15px;
 }
 /* Etch-a-Sketch grid */
 .board {
@@ -33,36 +33,82 @@
     display: grid;
     height: 30vw;
     width: 30vw;
-    border-width: 5px;
-    border-style: groove;
-    border-color: black;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.3), 0 0 0 2px rgb(225, 225, 225),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 /* universal selector setting all elements to border-box */
 * {
     box-sizing: border-box;
   }
+  /* html */
+  html {
+    height: 100%;
+  }
   /* body */
   body {
-    background-color: antiquewhite;
+    background: linear-gradient(to right, rgb(74, 194, 154), rgb(189, 255, 243));
+    background-repeat: no-repeat;
   }
   /* individual div elements (boxes) inside the board */
   .board>div {
     width: auto;
     height: auto;
-    box-shadow: 1px 1px 5px black;
+  }
+  /* pointer cursor */
+  .board:hover {
+    cursor: pointer;
   }
 /* color buttons*/
 .color-buttons {
   padding: 5px;
   gap: 4px;
-  font-family: cursive;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  background-color: white;
+  outline: 1px outset black;
+}
+
+#grey-button {
+  padding: 5px;
+  gap: 4px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  background-color: grey;
+  outline: 1px outset black;
+  
+}
+
+#black-button {
+  padding: 5px;
+  gap: 4px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  background-color: black;
+  outline: 1px outset black;
+  color: white;
+}
+
+#random-button {
+  padding: 5px;
+  gap: 4px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  background:linear-gradient(to right, purple, lightblue, red);
+  outline: 1px outset black;
+
+}
+
+#eraser-button {
+  padding: 5px;
+  gap: 4px;
+  font-family:'Courier New', Courier, monospace;
   font-size: 20px;
   background-color: white;
   outline: 1px outset black;
 }
 /* title */
 .title {
-  font-family:cursive;
+  font-family:'Courier New', Courier, monospace;
   font-size: 40px;
   text-decoration: underline;
 }
@@ -70,6 +116,7 @@
 .color-mode {
   margin: 10px;
   font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
 }
   
  
