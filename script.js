@@ -3,23 +3,20 @@ let color = "black";
 let click = true;
 
 // Function to create 16x16 grid
-
 function createGrid(size) {
-
 const container = document.querySelector('.board');
+
 let squares = container.querySelectorAll('div');   // These 2 lines of code ensure that every time the board is changed in size, the old squares are being removed. going rom 16 to 17 would just append a 17x17 grid onto the old 16x16 grid.
 squares.forEach((div) => div.remove());      // Without the forEach statement to remove the div's each time the user changes the boards size, the new size and number of squares would be appended to the old size and number of squares.
+
 container.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
 container.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
 let amount = size * size;  // amount to represent the value inputted by user then * by each other. i.e., 16 x 16 or 24 x24 etc..
 
-
 for (let i = 0; i < amount; i++){   // amount is equal to the value passed in by the user into the input element on the page.
     const cell = document.createElement('div');
-    
     cell.addEventListener('mouseenter', colorSquareTwo);
-
     cell.style.backgroundColor = "white";
     cell.setAttribute('id', "cell-style");
     container.appendChild(cell);
@@ -31,17 +28,11 @@ createGrid(16);
 function changeGrid(input) {
     if (input >= 2 && input <= 100){
         createGrid(input)    // changeGrid(input) is equal to the value that was passed in by the user into the input element on the page. Therefore (size) inside createGrid is referring to the users input.
-    } else {
-        alert("Too many, or not enough squares");
-    }
+    } else if (input < 2){
+        alert("Not enough pixels selected, choose between 2 and 100 pixels.");
+    } else alert("Too many pixels selected, choose between 2 and 100 pixels.");
 }
 
-
-// function to color the squares. (this) refers to the element that received the event. here, (this) is referring to the div that is being hovered over by the user.
-function colorSquare() {
-    this.style.backgroundColor = color;
-}
- 
 // function to reset Etch-a-Sketch board
 function resetBoard() {
     const container = document.querySelector('.board');
@@ -68,6 +59,11 @@ function colorSquareTwo() {
 
 document.querySelector('body').addEventListener('click', () => {  // if click is true then it is equal to false and vice versa. Alternating between true or false and color or no color.
     click = !click;
+    if (click) {
+        document.querySelector('.color-mode').textContent = "Color mode: ON";
+    } else {
+        document.querySelector('.color-mode').textContent = "Color mode: OFF";
+    }
 })
 
 
